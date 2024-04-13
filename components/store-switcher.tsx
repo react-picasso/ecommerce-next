@@ -71,15 +71,15 @@ export default function StoreSwitcher({
 					className={cn("w-[200px] justify-between", className)}
 				>
 					<StoreIcon className="mr-2 h-4 w-4" />
-					Current Store
+					{currentStore?.label}
 					<ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50" />
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent className="w-[200px] p-0">
 				<Command>
 					<CommandList>
-						<CommandInput placeholder="Search for a store..." />
-						<CommandEmpty>No store found</CommandEmpty>
+						<CommandInput placeholder="Search store..." />
+						<CommandEmpty>No store found.</CommandEmpty>
 						<CommandGroup heading="Stores">
 							{formattedItems.map((store) => (
 								<CommandItem
@@ -110,9 +110,9 @@ export default function StoreSwitcher({
 									storeModal.onOpen();
 								}}
 							>
-                                <PlusCircle className="mr-2 h-5 w-5" />
-                                Create Store
-                            </CommandItem>
+								<PlusCircle className="mr-2 h-5 w-5" />
+								Create Store
+							</CommandItem>
 						</CommandGroup>
 					</CommandList>
 				</Command>
